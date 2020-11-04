@@ -36,20 +36,38 @@ public class Level1
            }
 
        }
-       
        s = String.format("%.5f", sum);
        char []charArray=s.toCharArray();
-       char [] newCharArray = new char[charArray.length];
-        int c =0;
+       int [] intArray = new int[charArray.length];
+       int c = 0;
+       int f =0;
        for (int i=0; i<charArray.length;i++)
        {
-           if (charArray[i]!='0'&& charArray[i]!=',' && charArray[i]!='.')
+           if (charArray[i]=='0'|| charArray[i]==',' && charArray[i]!='.')
            {
-               newCharArray[c]=charArray[i];
+               continue;
+           } else
+               {
+               intArray[c] = Character.getNumericValue(charArray[i]);
                c++;
+               }
+       }
+       int length=0;
+        for (int i=0;i<intArray.length;i++)
+        {
+            if(intArray[i]!= 0)
+            {length++;}
+        }
+       char []newCharArray = new char[length];
+       for (int i=0;i<length;i++)
+       {
+           if(intArray[i]!= 0)
+           {
+               newCharArray[f]=(char)Character.forDigit(intArray [i],10);
+               f++;
            }
        }
-      s = String.valueOf(newCharArray);
+       s = String.valueOf(newCharArray);
        return s;
    }
 }
