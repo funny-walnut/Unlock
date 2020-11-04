@@ -40,11 +40,13 @@ public class Level1
        s = String.format("%.5f", sum);
        char []charArray=s.toCharArray();
        char [] newCharArray = new char[charArray.length];
+        int c =0;
        for (int i=0; i<charArray.length;i++)
        {
            if (charArray[i]!='0'&& charArray[i]!=',' && charArray[i]!='.')
            {
-               newCharArray[i]=charArray[i];
+               newCharArray[c]=charArray[i];
+               c++;
            }
        }
       s = String.valueOf(newCharArray);
