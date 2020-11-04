@@ -18,7 +18,6 @@ public class Level1
                    {
                        arrayK [i] = k;
                        arrayL [i] = l;
-                       System.out.println(k + " " +l);
                    }
                }
            }
@@ -37,7 +36,7 @@ public class Level1
            }
 
        }
-       System.out.println("summ = " + sum);
+       
        s = String.format("%.5f", sum);
        char []charArray=s.toCharArray();
        char [] newCharArray = new char[charArray.length];
