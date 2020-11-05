@@ -26,18 +26,21 @@ public class Level1
        for (int h = 1; h<N; h++)
        {
 
-           if ((arrayK[h]==arrayK[h-1]+1)||(arrayK[h]==arrayK[h-1]-1) && (arrayL[h]==arrayL[h-1]+1)||(arrayL[h]==arrayL[h-1]-1))
-           {
-               sum = sum+ Math.sqrt(2);
-           }
-           else if ((arrayK[h]==arrayK[h-1]+2)||(arrayK[h]==arrayK[h-1]-2) && (arrayL[h]==arrayL[h-1]+2)||(arrayL[h]==arrayL[h-1]-2))
+
+           if (((arrayK[h]==arrayK[h-1]+2)||(arrayK[h]==arrayK[h-1]-2)) && ((arrayL[h]==arrayL[h-1]+2)||(arrayL[h]==arrayL[h-1]-2)))
            {
                sum = sum + 2*Math.sqrt(2);
                
-           } else if ((arrayK[h]==arrayK[h-1]+1)||(arrayK[h]==arrayK[h-1]-1) || (arrayL[h]==arrayL[h-1]+1)||(arrayL[h]==arrayL[h-1]-1)) {
-           sum = sum+1;
-       }
 
+           } else if (((arrayK[h]==arrayK[h-1]+1)||(arrayK[h]==arrayK[h-1]-1)) && ((arrayL[h]==arrayL[h-1]+1)||(arrayL[h]==arrayL[h-1]-1)))
+           {
+               sum = sum+ Math.sqrt(2);
+
+           }
+           else if (((arrayK[h]==arrayK[h-1]+1)||(arrayK[h]==arrayK[h-1]-1) )|| ((arrayL[h]==arrayL[h-1]+1)||(arrayL[h]==arrayL[h-1]-1))) {
+               sum = sum+1;
+
+           }
        }
        s = String.format("%.5f", sum);
        char []charArray=s.toCharArray();
@@ -62,6 +65,7 @@ public class Level1
             {length++;}
         }
        char []newCharArray = new char[length];
+
        for (int i=0;i<length;i++)
        {
            if(intArray[i]!= 0)
@@ -70,8 +74,9 @@ public class Level1
                f++;
            }
        }
+
        s = String.valueOf(newCharArray);
-       
+
        return s;
 
    }
